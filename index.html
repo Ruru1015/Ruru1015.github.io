@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人主頁</title>
+    <!-- 引入 Google 字型與簡單 CSS -->
+    <style>
+        body {
+            font-family: 'Times New Roman', '標楷體', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- 透過 CDN 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>歡迎來到我的 GitHub Personal Page</h1>
+        <p>這是我的期末作業網頁，展示 HTML5、CSS 與 jQuery 互動效果。</p>
+        
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <!-- jQuery 互動區塊 -->
+        <h3>jQuery 功能展示區</h3>
+        <p id="msg">請點擊下方按鈕來觸發 jQuery 事件！</p>
+        <button id="colorBtn">點我改變效果</button>
+    </div>
+
+    <!-- jQuery 程式碼邏輯 -->
+    <script>
+        $(document).ready(function() {
+            let isChanged = false;
+            
+            $("#colorBtn").click(function() {
+                if (!isChanged) {
+                    $("#msg").text("jQuery 互動成功！文字顏色與背景已切換。").css("color", "#d9534f");
+                    $(".container").css("background-color", "#fff3cd");
+                    isChanged = true;
+                } else {
+                    $("#msg").text("請點擊下方按鈕來觸發 jQuery 事件！").css("color", "#333");
+                    $(".container").css("background-color", "#white");
+                    isChanged = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
